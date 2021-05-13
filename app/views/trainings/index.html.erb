@@ -1,0 +1,9 @@
+<% @trainings.each do |training| %>
+<div>
+  <%= attachment_image_tag training, :image %>
+  <p>投稿ユーザー画像：<%= image_tag('/KINTORE/app/assets/images/no_image.jpg') %></p>
+  <p>タイトル名：<%= training.title %></p>
+  <p>説明：<%= training.description %></p>
+  <p>ユーザーネーム：<%= training.user.user_name %></p>
+</div>
+<% end %>
