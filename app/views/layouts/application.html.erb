@@ -9,22 +9,26 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <header>
-    <div class="row">
-      <div class="col-12">
-        <%= render'layouts/user_header' %>
-      </div>
-    </div>
-  </header>
-
   <body>
-    <div class="row">
-      <div class="col-2 ">
-        <%= render'layouts/user_sidebar' %>
-      </div>
-      <div class="col-8">
-        <%= yield %>
-      </div>
+    <div class="container-fluid">
+      <header>
+        <div class="row">
+          <div class="col-12">
+            <%= render'layouts/user_header' %>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <div class="row">
+          <div class="col-2">
+            <%= render'layouts/user_sidebar' %>
+          </div>
+          <div class="col-10">
+            <%= yield %>
+          </div>
+        </div>
+      </main>
     </div>
   </body>
 </html>

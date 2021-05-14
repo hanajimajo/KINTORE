@@ -10,6 +10,11 @@
     <div class='row offset-1'>
       <div class="col-xs-offset-1 col-xs-8">
         <%= form_with model:@user, local:true do |f| %>
+        
+          <!--profile image-->
+          <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+
           <table class = 'table inin'>
             <tr>
               <td><%= f.label :氏名 %></td>
