@@ -6,13 +6,14 @@
   <p>説明：<%= training.description %></p>
   <p>ユーザーネーム：<%= training.user.user_name %></p>
 
+  <% if training.user == current_user %>
     <% if training.favorited_by?(current_user) %>
       <p>
         <%= link_to training_favorites_path(training), method: :delete do %>
           ♥<%= training.favorites.count %> いいね
         <% end %>
       </p>
-      <% else %>
+    <% else %>
       <p>
         <%= link_to training_favorites_path(training), method: :post do %>
           ♡<%= training.favorites.count %> いいね
@@ -20,8 +21,13 @@
       </p>
     <% end %>
 
+    <% if training.bookmarked_by?(current_user) %>
+      <td><%= link_to "ブックマークを外す", training_bookmarks_path(training), method: :delete %></td>
+    <% else %>
+      <td><%= link_to "ブックマーク", training_bookmarks_path(training), method: :post %></td>
+    <% end %>
+
   <!--login user only-->
-  <% if training.user == current_user %>
     <%= link_to "編集", edit_training_path(training) %>
     <%= link_to "削除", training_path(training), method: :delete %>
   <% end %>

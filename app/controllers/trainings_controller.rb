@@ -17,7 +17,6 @@ class TrainingsController < ApplicationController
   end
 
   def show
-    @training = Training.find(params[:id])
   end
 
   def edit
@@ -25,6 +24,7 @@ class TrainingsController < ApplicationController
   end
 
   def bookmark
+    @bookmarks = Bookmark.where(user_id: current_user.id)
   end
 
   def ranking

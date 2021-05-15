@@ -1,6 +1,6 @@
 <sidebar>
     <nav class="navbar navbar-dark bg-secondary text-white h-100 ">
-        <div class="container">
+        <div class="panel">
             <% if user_signed_in? %>
                 <li><%= link_to 'ホーム', root_path, class: "text-white" %></li>
                 <li><%= link_to 'マイページ', user_path(current_user), class: "text-white" %></li>

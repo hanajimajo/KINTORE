@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get 'bookmark'
     get 'ranking'
     resource :favorites, only: [:create, :destroy]
+    resource :bookmarks, only: [:create, :destroy]
   end
 
 end
