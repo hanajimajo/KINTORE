@@ -19,16 +19,28 @@
         </div>
       </header>
 
-      <main>
         <div class="row">
           <div class="col-2 px-0">
-            <%= render'layouts/user_sidebar' %>
+            <!--<div class = "background_side">-->
+              <%= render'layouts/user_sidebar' %>
+            <!--</div>-->
           </div>
+
           <div class="col-10 px-0">
-            <%= yield %>
+            <div class = "background_main">
+              <%= yield %>
+            </div>
           </div>
         </div>
-      </main>
+
+      <footer>
+        <div class="row">
+          <div class="col-12 px-0">
+            <%= render'layouts/footer' %>
+          </div>
+        </div>
+      </footer>
+
     </div>
   </body>
 </html>

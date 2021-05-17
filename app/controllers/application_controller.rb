@@ -1,5 +1,15 @@
 class ApplicationController < ActionController::Base
 
+  # ログインした際に遷移先を指定
+  def after_sign_in_path_for(resource)
+    case resource
+    when Admin
+      root_path
+    when User
+      root_path
+    end
+  end
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

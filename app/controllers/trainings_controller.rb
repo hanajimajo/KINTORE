@@ -13,6 +13,7 @@ class TrainingsController < ApplicationController
 
   def index
     @trainings = Training.all
+    @user = current_user
 
   end
 
@@ -28,6 +29,7 @@ class TrainingsController < ApplicationController
   end
 
   def ranking
+    @rankings = Training.find(Favorite.group(:training_id).order('count(training_id) desc').limit(3).pluck(:training_id))
   end
 
   def update

@@ -14,3 +14,40 @@
  *= require_self
  */
  @import "bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #6c6b6b;
+}
+
+nav {
+  padding-top: 60px;
+  min-height: 100vh;
+}
+
+li {
+  list-style: none;
+  padding-bottom: 10px;
+  adding-top: 10px;
+}
+
+.sidebar_fixed {
+  position: sticky;
+  top: 0px;
+  background-color: #1A1A1A;
+}
+
+ header {
+  background-color: #000000;
+}
+
+
+ .background_main {
+  background-color: #333333;
+ }
+
+ footer {
+  background-color: #000000;
+}

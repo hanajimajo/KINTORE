@@ -1,6 +1,6 @@
 <% @trainings.each do |training| %>
 <div>
-  <%= attachment_image_tag training, :image %>
+  <%= attachment_image_tag training, :image, size:'250x180' %>
   <p><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></p>
   <p>タイトル名：<%= training.title %></p>
   <p>時間×セット：<%= training.time %>×<%= training.set %></p>

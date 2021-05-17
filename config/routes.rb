@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     resource :bookmarks, only: [:create, :destroy]
   end
 
+  devise_for :admins
+
 end
