@@ -1,3 +1,22 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ .users-backimage {
+  min-height: 40vh;
+  background-image: url(/assets/login.jpg);
+  background-size: 100% auto;
+}
+
+.users-title {
+ color: #000000;
+ display: flex;
+ height: 40vh;
+ align-items: center;
+ justify-content: center;
+}
+
+.container {
+ background-size: 100% auto;
+ margin: 60px auto;
+}
