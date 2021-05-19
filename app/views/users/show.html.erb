@@ -1,52 +1,39 @@
 <main>
-
-  <div class = "container my-5 ">
-    <div class="row">
-      <div class="col-sm-4">
-        <h3 class="offset-1 bg-light">マイページ</h3>
-      </div>
+  <div class = "mypage-backimage">
+    <div class = "users-title">
+      <h2 class = "text-white">マイページ</h2>
     </div>
-
-    <div class="row my-3">
-      <div class="col-sm-2">
-        <h3>登録情報</h3>
-      </div>
-      <div class="col-sm-2">
-        <%= link_to '編集する', edit_user_path, class: "btn btn-success  px-2"%>
-        <%= link_to '退会する', user_withdraw_path(current_user), method: :patch, "data-confirm" => "本当に退会しますか？", class: "ml-2 btn btn-danger" %>
-      </div>
-    </div>
-
-    <div class='row'>
-      <div class="col-sm-7">
+  </div>
+  
+  <div class = "container">
+    <div class = "low">
+      <div class = "col-10 offset-1 text-center">
         <tr>
-            <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
+            <%= attachment_image_tag @user, :profile_image, :fill, 70, 70, fallback: "no_image.jpg", class: "mx-5 my-3"%>
+            <%= link_to '編集する', edit_user_path, class: "btn btn-link  m-2 btn-outline-success text-white"%>
+            <%= link_to '退会する', user_withdraw_path(current_user), method: :patch, "data-confirm" => "本当に退会しますか？", class: "m-2 btn btn-link btn-outline-danger text-white" %>
         </tr>
+  
         <table class = 'table border'>
           <!-- log in user情報-->
           <tr>
             <td class = 'information border bg-light'>氏名</td>
-            <td><%= @user.last_name %><%= @user.first_name %></td>
+            <td class = "text-white"><%= @user.last_name %><%= @user.first_name %></td>
           </tr>
           <tr>
             <td class = 'information border bg-light'>カナ</td>
-            <td><%= @user.last_name_kana %><%= @user.first_name_kana %></td>
+            <td class = "text-white"><%= @user.last_name_kana %><%= @user.first_name_kana %></td>
           </tr>
           <tr>
             <td class = 'information border bg-light'>ユーザー名</td>
-            <td><%= @user.user_name %></td>
+            <td class = "text-white"><%= @user.user_name %></td>
           </tr>
           <tr>
             <td class = 'information border bg-light'>メールアドレス</td>
-            <td><%= @user.email %></td>
+            <td class = "text-white"><%= @user.email %></td>
           </tr>
-
         </table>
       </div>
     </div>
-
-
-
-
   </div>
 </main>

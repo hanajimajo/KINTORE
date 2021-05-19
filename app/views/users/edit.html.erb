@@ -1,50 +1,47 @@
-<body>
-  <div class = "container my-5">
+<div class = "trainingsindex-backimage">
+  <div class = "users-title">
+    <h2 class = "text-white">アカウント編集</h2>
+  </div>
+</div>
 
-    <div class="row">
-      <div class="col offset-2">
-        <h3 class="edit_title">会員情報編集</h3>
-      </div>
-    </div>
-
-    <div class='row offset-1'>
-      <div class="col-xs-offset-1 col-xs-8">
+<div class = "index-container">
+  <div class = "low">
+    <div class = "col-10 offset-1 mx-auto text-center text-white">
         <%= form_with model:@user, local:true do |f| %>
-        
-          <!--profile image-->
-          <%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%>
-          <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
-
           <table class = 'table inin'>
             <tr>
-              <td><%= f.label :氏名 %></td>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></td>
+              <td><%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: " text-white" %></td>
+            </tr>
+            <tr>
+              <td class="text-white">氏名</td>
               <td>
-                <%= f.text_field :last_name, :size => "20*30", class: "border border-dark rounded" %>
-                <%= f.text_field :first_name, :size => "20*30", class: "border border-dark rounded" %>
+                <%= f.text_field :last_name, :size => "20*30", class: "border border-dark rounded text-dark" %>
+                <%= f.text_field :first_name, :size => "20*30", class: "border border-dark rounded text-dark" %>
               </td>
             </tr>
             <tr>
-              <td><%= f.label :カナ %></td>
+              <td class="text-white">カナ</td>
               <td>
-                <%= f.text_field :last_name_kana, :size => "20*30", class: "border border-dark rounded" %>
-                <%= f.text_field :first_name_kana, :size => "20*30", class: "border border-dark rounded" %>
+                <%= f.text_field :last_name_kana, :size => "20*30", class: "border border-dark rounded text-dark" %>
+                <%= f.text_field :first_name_kana, :size => "20*30", class: "border border-dark rounded text-dark" %>
               </td>
             </tr>
             <tr>
-              <td><%= f.label :ユーザー名 %></td>
-              <td><%= f.text_field :user_name, :size => "20*30", class: "border border-dark rounded" %></td>
+              <td class="text-white">ユーザー名</td>
+              <td><%= f.text_field :user_name, :size => "20*30", class: "border border-dark rounded text-dark",:size => "42" %></td>
             </tr>
             <tr>
-              <td><%= f.label :メールアドレス %></td>
-              <td><%= f.text_field :email, :size => "20*30", class: "border border-dark rounded" %></td>
+              <td class="text-white">メールアドレス</td>
+              <td><%= f.text_field :email, :size => "20*30", class: "border border-dark rounded text-dark",:size => "42" %></td>
             </tr>
           </table>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-sm-2 offset-3">
-        <%= f.submit '編集内容を保存', class: 'btn btn-success' %>
+      <div class="col-10 offset-1 ">
+        <%= f.submit '編集内容を保存', class: 'btn btn-link mx-auto d-block m-2 btn-outline-success text-white' %>
       </div>
         <% end %>
     </div>

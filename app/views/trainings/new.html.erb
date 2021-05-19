@@ -1,12 +1,41 @@
-<h1>画像投稿フォーム</h1>
-<%= form_with model: @training, local:true do |f| %>
-  <h4>画像</h4>
-  <%= f.attachment_field :image %>
-  <h4>タイトル</h4>
-  <%= f.text_field :title %>
-  <h4>時間×セット</h4>
-  <%= f.text_field :time %>×<%= f.text_field :set %>
-  <h4>説明</h4>
-  <%= f.text_area :description %>
-  <%= f.submit '投稿' %>
-<% end %>
+<div class = "trainingnew-backimage">
+  <div class = "trainings-title">
+    <h2 class = "text-white">新規投稿</h2>
+  </div>
+</div>
+
+<div class = "container">
+  <div class = "low">
+    <div class = "col-10 offset-1 mx-auto text-center bg-white">
+
+    <%= form_with model: @training, local:true do |f| %>
+
+    <table class = 'table inin'>
+      <tr>
+        <td class="text-dark">トレーニング名</td>
+        <td><%= f.text_field :title, :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="text-dark">時間×セット</td>
+        <td><%= f.text_field :time, :size => "24" %>×<%= f.text_field :set, :size => "24" %></td>
+      </tr>
+      <tr>
+        <td class="text-dark">トレーニング詳細</td>
+        <td><%= f.text_area :description, size: "50x5",class: "border border-dark rounded text-dark" %></td>
+      </tr>
+      <tr>
+        <td class="text-dark">トレーニング画像</td>
+        <td><%= f.attachment_field :image %></td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-10 offset-1 ">
+        <%= f.submit '投稿', class: "btn btn-primary btn-sm mx-auto d-block m-2 text-white" %>
+      </div>
+    </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

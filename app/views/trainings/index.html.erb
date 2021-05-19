@@ -1,38 +1,48 @@
-<% @trainings.each do |training| %>
-<div>
-  <%= attachment_image_tag training, :image, size:'250x180' %>
-  <p><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></p>
-  <p>タイトル名：<%= training.title %></p>
-  <p>時間×セット：<%= training.time %>×<%= training.set %></p>
-  <p>説明：<%= training.description %></p>
-  <p>ユーザーネーム：<%= training.user.user_name %></p>
+<div class = "trainingindex-backimage">
+  <div class = "users-title">
+    <h2 class = "text-white">トレーニング一覧</h2>
+  </div>
+</div>
 
-  <% if training.user == current_user %>
-    <% if training.favorited_by?(current_user) %>
-      <p>
-        <%= link_to training_favorites_path(training), method: :delete do %>
-          ♥<%= training.favorites.count %> いいね
+<div class = "index-container">
+  <% @trainings.each do |training| %>
+    <div class = "index-box">
+      <div class = "post">
+        <p><%= attachment_image_tag training, :image, size:'200x150' %></p>
+        <p><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, fallback: "no_image.jpg"%></p>
+        <p>タイトル名：<%= training.title %></p>
+        <p>時間×セット：<%= training.time %>×<%= training.set %></p>
+        <p>説明：<%= training.description %></p>
+        <p>ユーザーネーム：<%= training.user.user_name %></p>
+
+        <% if training.favorited_by?(current_user) %>
+          <p>
+            <%= link_to training_favorites_path(training), method: :delete do %>
+              ♥<%= training.favorites.count %> いいね
+            <% end %>
+          </p>
+        <% else %>
+          <p>
+            <%= link_to training_favorites_path(training), method: :post do %>
+              ♡<%= training.favorites.count %> いいね
+            <% end %>
+          </p>
         <% end %>
-      </p>
-    <% else %>
-      <p>
-        <%= link_to training_favorites_path(training), method: :post do %>
-          ♡<%= training.favorites.count %> いいね
+
+        <% if training.bookmarked_by?(current_user) %>
+            <td><%= link_to "ブックマークを外す", training_bookmarks_path(training), method: :delete %></td>
+          <% else %>
+            <td><%= link_to "ブックマーク", training_bookmarks_path(training), method: :post %></td>
         <% end %>
-      </p>
-    <% end %>
 
-    <% if training.bookmarked_by?(current_user) %>
-      <td><%= link_to "ブックマークを外す", training_bookmarks_path(training), method: :delete %></td>
-    <% else %>
-      <td><%= link_to "ブックマーク", training_bookmarks_path(training), method: :post %></td>
-    <% end %>
+      <!--login user only-->
+        <%= link_to "編集", edit_training_path(training) %>
+        <%= link_to "削除", training_path(training), method: :delete %>
 
-  <!--login user only-->
-    <%= link_to "編集", edit_training_path(training) %>
-    <%= link_to "削除", training_path(training), method: :delete %>
+      </div>
+    </div>
   <% end %>
 
+  </div>
 </div>
-<% end %>
 

@@ -2,11 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
- .users-backimage {
+ .login-backimage {
   min-height: 40vh;
   background-image: url(/assets/login.jpg);
   background-size: 100% auto;
 }
+
+  .signup-backimage {
+  min-height: 40vh;
+  background-image: url(/assets/sign-up.jpg);
+  background-size: 100% auto;
+}
+
+ .mypage-backimage {
+  min-height: 40vh;
+  background-image: url(/assets/mypage.jpg);
+  background-size: 100% auto;
+}
+
+ .edit-backimage {
+  min-height: 40vh;
+  background-image: url(/assets/sign-up.jpg);
+  background-size: 100% auto;
+}
+
 
 .users-title {
  color: #000000;
@@ -19,4 +38,8 @@
 .container {
  background-size: 100% auto;
  margin: 60px auto;
+}
+
+.textcolor {
+ color: #000000;
 }

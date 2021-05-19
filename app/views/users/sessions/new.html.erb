@@ -1,4 +1,4 @@
-<div class = "users-backimage">
+<div class = "login-backimage">
   <div class = "users-title">
     <h2 class = "text-white">ログイン</h2>
   </div>
@@ -8,27 +8,27 @@
   <div class = "low">
     <div class = "col-10 offset-1 mx-auto text-center">
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
-  <div class="field">
-    <%= f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "border border-dark text-center m-3", :size => "60" %>
-  </div>
+        <div class="field">
+          <%= f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "border border-dark text-center m-3", :size => "60" %>
+        </div>
 
-  <div class="field">
-    <%= f.password_field :password,placeholder: "パスワード", autocomplete: "current-password", class: "border border-link text-center m-3", :size => "60" %>
-  </div>
+        <div class="field">
+          <%= f.password_field :password,placeholder: "パスワード", autocomplete: "current-password", class: "border border-link text-center m-3", :size => "60" %>
+        </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me, class: "border border-dark m-1" %>
-      <%= f.label :ログイン状態を保持する, class: "border border-0 m-1 text-white" %>
-    </div>
-  <% end %>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me, class: "border border-dark m-1" %>
+            <%= f.label :ログイン状態を保持する, class: "border border-0 m-1 text-white" %>
+          </div>
+        <% end %>
 
-  <div class="actions">
-    <%= f.submit "ログイン", class: "border border-link text-center m-3", :size => "60*30" %>
-  </div>
-<% end %>
+        <div class="actions">
+          <%= f.submit "ログイン", class: "border border-link text-center text-dark m-3", :size => "60*30" %>
+        </div>
+      <% end %>
 
-<%= render "users/shared/links" %>
+      <%= render "users/shared/links" %>
 
     </div>
   </div>
