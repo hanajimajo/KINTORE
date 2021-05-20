@@ -1,23 +1,37 @@
-<table>
-  <caption>ブックマーク一覧</caption>
-  <thead>
-    <tr>
-      <th>投稿者名</th>
-      <th>タイトル</th>
-      <th>本文</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @bookmarks.each do |bookmark| %>
-      <tr>
-        <td><%= bookmark.training.user.user_name %></td>
-        <td>
-          <%= link_to trainings_path(bookmark.training) do %>
-            <%= bookmark.training.title %>
-          <% end %>
-        </td>
-        <td><%= bookmark.training.description %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<main>
+<div class = "trainingbookmark-backimage">
+  <div class = "users-title">
+    <h2 class = "text-white">お気に入り</h2>
+  </div>
+</div>
+
+<div class = "container">
+  <div class = "low">
+    <div class = "col-10 offset-1 text-center">
+
+      <table class = 'table border '>
+          <thead>
+            <tr>
+              <th></th>
+              <th class = "text-white">投稿者</th>
+              <th class = "text-white">トレーニング名</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @bookmarks.each do |bookmark| %>
+              <tr>
+                <td><%= attachment_image_tag @user, :profile_image, size: '30x30', fallback: "no_image.jpg"%></td>
+                <td class = "text-white"><%= bookmark.training.user.user_name %></td>
+                <td>
+                  <%= link_to training_path(bookmark.training) do %>
+                    <%= bookmark.training.title %>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -30,6 +30,7 @@ class TrainingsController < ApplicationController
 
   def ranking
     @rankings = Training.find(Favorite.group(:training_id).order('count(training_id) desc').limit(3).pluck(:training_id))
+    @training = Training.all
   end
 
   def update

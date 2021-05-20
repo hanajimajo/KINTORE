@@ -1,0 +1,35 @@
+<div class = "articles-title">
+  <h2 class = "text-white">記事投稿（管理者）</h2>
+</div>
+
+<div class = "container">
+  <div class = "low">
+    <div class = "col-10 offset-1 mx-auto text-center bg-white">
+
+    <%= form_with model: @article, local:true do |f| %>
+
+    <table class = 'table inin'>
+      <tr>
+        <td class="text-dark">トレーニング画像</td>
+        <td><%= f.attachment_field :article_image %></td>
+      </tr>
+      <tr>
+        <td class="text-dark">記事タイトル</td>
+        <td><%= f.text_field :title, :size => "50" %></td>
+      </tr>
+      <tr>
+        <td class="text-dark">トレーニング詳細</td>
+        <td><%= f.text_area :description, size: "50x5",class: "border border-dark rounded text-dark" %></td>
+      </tr>
+    </table>
+
+    <div class="row">
+      <div class="col-10 offset-1 ">
+        <%= f.submit '投稿', class: "btn btn-primary btn-sm mx-auto d-block m-2 text-white" %>
+      </div>
+    </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

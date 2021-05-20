@@ -18,6 +18,17 @@
   background-size: 100% auto;
 }
 
+  .trainingbookmark-backimage {
+  min-height: 40vh;
+  background-image: url(/assets/bookmark.jpg);
+  background-size: 100% auto;
+}
+  .trainingranking-backimage {
+  min-height: 40vh;
+  background-image: url(/assets/ranking.jpg);
+  background-size: 100% auto;
+}
+
 // 投稿一覧
 .index-container {
   display: flex;

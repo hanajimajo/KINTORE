@@ -16,4 +16,6 @@ Rails.application.routes.draw do
 
   devise_for :admins
 
+  resources :articles, only: [:index, :new, :show, :edit, :create, :update, :destroy]
+
 end

@@ -1,0 +1,22 @@
+
+<div class = "articleindex-backimage">
+  <div class = "articles-title">
+    <h2 class = "text-white">ピックアップ</h2>
+  </div>
+</div>
+
+<div class = "container">
+    <table class = 'table border '>
+      <tbody>
+      <% @articles.each do |article| %>
+      <tr>
+        <td><%= attachment_image_tag article, :article_image, size: '400x200'%></td>
+        <td>
+          <p><%= article.title %></p>
+          <p><%= article.description %></p>
+        </td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+</div>
