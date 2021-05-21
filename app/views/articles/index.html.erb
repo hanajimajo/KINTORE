@@ -5,6 +5,7 @@
   </div>
 </div>
 
+<!--管理者投稿情報-->
 <div class = "container">
     <table class = 'table border '>
       <tbody>
@@ -20,3 +21,6 @@
       </tbody>
     </table>
 </div>
+
+<!--ページング機能-->
+<%= paginate @articles, class: "center-block" %>

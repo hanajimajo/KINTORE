@@ -14,10 +14,12 @@ class TrainingsController < ApplicationController
   def index
     @trainings = Training.all
     @user = current_user
-
+    @trainings = Training.page(params[:page]).reverse_order
   end
 
   def show
+    @training = Training.find(params[:id])
+    @user = current_user
   end
 
   def edit
@@ -48,7 +50,7 @@ class TrainingsController < ApplicationController
   private
 
   def training_params
-    params.require(:training).permit(:title, :image, :set, :time, :description)
+    params.require(:training).permit(:title, :image, :set, :time, :description, :genre)
   end
 
 end

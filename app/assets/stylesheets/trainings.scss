@@ -1,7 +1,7 @@
 .trainings-title {
  color: #000000;
  display: flex;
- height: 40vh;
+ height: 20vh;
  align-items: center;
  justify-content: center;
 }
@@ -29,15 +29,35 @@
   background-size: 100% auto;
 }
 
-// 投稿一覧
+  .trainingshow-backimage {
+  min-height: 20vh;
+  background-image: url(/assets/trainingshow.jpg);
+  background-size: 100% auto;
+}
+
+// 投稿
 .index-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center
 }
 
+.showbody {
+  background-color: #fff;
+}
+
+.thshow {
+  width: 130px;
+}
+
+.trainingimg {
+  width : 100% ; // show:画像調整
+}
+
 .index-box {
-  margin: 10px;
+  margin: 30px;
+  width: 252px;
+  height: 100%;
 }
 
 .post {
@@ -47,4 +67,33 @@
 
 .account-image {
   border-radius: 50%;
+}
+
+.break{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.favooff {
+  color: #ff69b4;
+}
+
+.favoon {
+  color: #ff69b4;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.kaminari {
+  margin: 0px;
+  putting: 0px;
+}
+
+.pagination {
+  justify-content: center;
+  margin: 30px;
 }

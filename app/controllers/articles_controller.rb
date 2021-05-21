@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @articles = Article.page(params[:page]).reverse_order
   end
 
   def new

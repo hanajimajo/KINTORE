@@ -19,6 +19,11 @@
         <td class="text-dark">時間×セット</td>
         <td><%= f.text_field :time, :size => "24" %>×<%= f.text_field :set, :size => "24" %></td>
       </tr>
+      <!--ジャンル　プルダウン選択式-->
+      <tr>
+        <td class="text-dark">ジャンル</td>
+        <td><%= f.select :genre, [["腕", "腕"], ["胸", "胸"],["腹", "腹"],["足", "足"]], include_blank: "選択して下さい", size: "50x5" %></td>
+      </tr>
       <tr>
         <td class="text-dark">トレーニング詳細</td>
         <td><%= f.text_area :description, size: "50x5",class: "border border-dark rounded text-dark" %></td>

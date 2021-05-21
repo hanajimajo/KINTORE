@@ -8,48 +8,65 @@
   <% @trainings.each do |training| %>
     <div class = "index-box">
       <div class = "post">
-        <p><%= attachment_image_tag training, :image, size:'200x150' %></p>
-        <p><%= attachment_image_tag @user, :profile_image, :fill, 50, 50, fallback: "no_image.jpg"%></p>
-        <p>タイトル名：<%= training.title %></p>
-        <p>時間×セット：<%= training.time %>×<%= training.set %></p>
-        <p>説明：<%= training.description %></p>
-        <p>ユーザーネーム：<%= training.user.user_name %></p>
 
-        <% if user_signed_in? %>
-          <% if training.favorited_by?(current_user) %>
-            <p>
-              <%= link_to training_favorites_path(training), method: :delete do %>
-                ♥<%= training.favorites.count %> いいね
-              <% end %>
-            </p>
-          <% else %>
-            <p>
-              <%= link_to training_favorites_path(training), method: :post do %>
-                ♡<%= training.favorites.count %> いいね
-              <% end %>
-            </p>
-          <% end %>
-        <% else %>
-        <% end %>
+          <!--トレーニング投稿情報-->
+        <p><%= attachment_image_tag training, :image, size:'250x200' %></p>
+        <p class = "text-center">
+          <%= attachment_image_tag @user, :profile_image, size:'33x33', fallback: "no_image.jpg", class: "rounded-circle" %>
+          <%= training.user.user_name %>
+        </p>
+        <p class = "break text-center">【<%= link_to training.title, training_path(training.id) %>】：<%= training.genre %></p>
+        <p class = "text-center"><%= training.time %>×<%= training.set %></p>
+        <p class = "break text-center" ><%= training.description %></p>
 
-        <% if user_signed_in? %>
-          <% if training.bookmarked_by?(current_user) %>
-              <td><%= link_to "ブックマークを外す", training_bookmarks_path(training), method: :delete %></td>
+        <!--ボーダー線-->
+        <hr width="100%"></hr>
+
+        <div class="content">
+
+          <!--いいね機能-->
+          <% if user_signed_in? %>
+            <% if training.favorited_by?(current_user) %>
+              <span>
+                <%= link_to training_favorites_path(training), method: :delete do %>
+                  <i class="fas fa-heart fa-lg favoon"></i><%= training.favorites.count %>
+                <% end %>
+              </span>
             <% else %>
-              <td><%= link_to "ブックマーク", training_bookmarks_path(training), method: :post %></td>
+              <span>
+                <%= link_to training_favorites_path(training), method: :post do %>
+                  <i class="far fa-heart fa-lg favooff"></i><%= training.favorites.count%>
+                <% end %>
+              </span>
+            <% end %>
+          <% else %>
           <% end %>
-        <% else %>
-        <% end %>
 
-        <% if training.user == current_user %>
-          <%= link_to "編集", edit_training_path(training) %>
-          <%= link_to "削除", training_path(training), method: :delete %>
-        <% end %>
+          <!--ブックマーク機能-->
+          <% if user_signed_in? %>
+            <% if training.bookmarked_by?(current_user) %>
+                <span><%= link_to "", training_bookmarks_path(training), method: :delete, class: "fas fa-bookmark fa-lg" %></span>
+              <% else %>
+                <span><%= link_to "", training_bookmarks_path(training), method: :post, class: "far fa-bookmark fa-lg" %></></span>
+            <% end %>
+          <% else %>
+          <% end %>
 
+
+          <!--編集削除機能-->
+          <% if training.user == current_user %>
+            <span>
+              <%= link_to "編集", edit_training_path(training) %>
+            </span>
+            <span>
+              <%= link_to "削除", training_path(training), method: :delete %>
+            </span>
+          <% end %>
+
+        </div>
       </div>
     </div>
   <% end %>
-
-  </div>
 </div>
 
+<%= paginate @trainings, class: "center-block" %>
