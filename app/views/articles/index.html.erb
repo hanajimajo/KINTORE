@@ -5,21 +5,20 @@
   </div>
 </div>
 
-<!--管理者投稿情報-->
-<div class = "container">
-    <table class = 'table border '>
-      <tbody>
-      <% @articles.each do |article| %>
-      <tr>
-        <td><%= attachment_image_tag article, :article_image, size: '400x200'%></td>
-        <td>
-          <p><%= article.title %></p>
-          <p><%= article.description %></p>
-        </td>
-      </tr>
-      <% end %>
-      </tbody>
-    </table>
+<div class = "article-container">
+  <% @articles.each do |article| %>
+  <div class = "col-8 offset-md-2">
+    <div class = "article-box">
+      <h3 class = "article-background text-white text-center"><%= article.title %></h3>
+      <div class = "post">
+        <div><%= attachment_image_tag article, :article_image, class: "article-image"%></div>
+        <div class = "article-content">
+          <div><%= article.description %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </div>
 
 <!--ページング機能-->

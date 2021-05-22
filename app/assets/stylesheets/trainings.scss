@@ -1,38 +1,39 @@
 .trainings-title {
  color: #000000;
  display: flex;
- height: 20vh;
+ height: 40vh;
  align-items: center;
  justify-content: center;
 }
 
   .trainingnew-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/trainingnew.jpg);
-  background-size: 100% auto;
+  background-image: image-url("trainingnew.jpg");
+  background-size: cover;
+  background-position: center;
+
 }
 
   .trainingindex-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/trainingindex.jpg);
-  background-size: 100% auto;
+  background-image: image-url("trainingindex.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
   .trainingbookmark-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/bookmark.jpg);
-  background-size: 100% auto;
+  background-image: image-url("bookmark.jpg");
+  background-size: cover;
+  background-position: center;
 }
   .trainingranking-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/ranking.jpg);
-  background-size: 100% auto;
+  background-image: image-url("ranking.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
   .trainingshow-backimage {
-  min-height: 20vh;
-  background-image: url(/assets/trainingshow.jpg);
-  background-size: 100% auto;
+  background-image: image-url("trainingshow.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 // 投稿
@@ -47,7 +48,7 @@
 }
 
 .thshow {
-  width: 130px;
+  width: 200px;
 }
 
 .trainingimg {

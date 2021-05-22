@@ -16,7 +16,7 @@
           <td class = "text-dark"><%= @user.user_name %></td>
         </tr>
         <tr>
-          <td class = 'information border bg-light'>時間×セット</td>
+          <td class = 'information border bg-light'>時間or回数 × セット</td>
           <td class = "text-dark"><%= @training.time %>×<%= @training.set %></td>
         </tr>
         <tr>
@@ -25,9 +25,48 @@
         </tr>
         <tr>
           <td class = 'information border bg-light'>詳細</td>
-          <td class = "text-dark"><%= @training.description %></td>
+          <!--段落表示-->
+          <td class = "text-dark text-left"><%=safe_join(@training.description.split("\n"),tag(:br))%></td>
         </tr>
       </table>
+
+      <div class="text-right">
+          <% if user_signed_in? %>
+            <% if @training.favorited_by?(current_user) %>
+              <span>
+                <%= link_to training_favorites_path(@training), method: :delete do %>
+                  <i class="fas fa-heart fa-lg favoon"></i><%= @training.favorites.count %>
+                <% end %>
+              </span>
+            <% else %>
+              <span>
+                <%= link_to training_favorites_path(@training), method: :post do %>
+                  <i class="far fa-heart fa-lg favooff"></i><%= @training.favorites.count%>
+                <% end %>
+              </span>
+            <% end %>
+          <% else %>
+          <% end %>
+
+          <% if user_signed_in? %>
+            <% if @training.bookmarked_by?(current_user) %>
+                <span><%= link_to "", training_bookmarks_path(@training), method: :delete, class: "fas fa-bookmark fa-lg" %></span>
+              <% else %>
+                <span><%= link_to "", training_bookmarks_path(@training), method: :post, class: "far fa-bookmark fa-lg" %></></span>
+            <% end %>
+          <% else %>
+          <% end %>
+
+          <% if @training.user == current_user %>
+            <span>
+              <%= link_to "編集", edit_training_path(@training) %>
+            </span>
+            <span>
+              <%= link_to "削除", training_path(@training), method: :delete %>
+            </span>
+          <% end %>
+      </div>
+
       <div class = "text-right"><%= @training.updated_at %></div>
     </div>
   </div>

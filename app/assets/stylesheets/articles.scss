@@ -9,6 +9,30 @@
 
   .articleindex-backimage {
   min-height: 20vh;
-  background-image: url(/assets/article.jpg);
+  background-image: image-url("article.jpg");
   background-size: 100% auto;
+}
+
+.article-container {
+  flex-direction: column;
+}
+
+.article-box {
+  margin: 50px;
+  height: 100%;
+}
+
+.article-image {
+  display: inline-block;
+  width: 100%;
+}
+
+.article-content {
+  fdisplay: inline-block;
+  width: 100%;
+}
+
+.article-background {
+  background-color: #2f4f4f;
+  margin: 0px;
 }

@@ -1,5 +1,23 @@
-.img img {
-width: 100%;
-min-height: 100vh;
-object-fit: cover;
+// .img img {
+// width: 100%;
+// min-height: 100vh;
+// object-fit: cover;
+// }
+
+.main-image {
+  width: 100%; /* 横幅いっぱい */
+  height: 100%; /* 高さ300px */
+  background-image: image-url("kinniku.jpg");
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center;
+}
+
+.rect {
+  width: 100%; /* 横幅いっぱい */
+  height: 100%;
+  background-image: image-url("kemuri.png");
+  background-size: cover; /* 縦横比を維持したまま背景領域を埋め尽くす */
+  background-position: center;
+  opacity: 0.1;
+  position : absolute;
 }
