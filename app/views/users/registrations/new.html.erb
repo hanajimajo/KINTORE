@@ -13,33 +13,33 @@
       <%= render "users/shared/error_messages", resource: resource %>
 
         <div class="field">
-          <%= f.text_field :last_name,placeholder: "姓", autofocus: true, autocomplete: "last_name",class: "border border-dark text-center m-3", :size => "27" %>
-          <%= f.text_field :first_name,placeholder: "名", autofocus: true, autocomplete: "first_name",class: "border border-dark text-center m-3", :size => "27" %>
+          <%= f.text_field :last_name,placeholder: "姓", autofocus: true, autocomplete: "last_name",class: "border border-dark text-center m-3 text-dark", :size => "27" %>
+          <%= f.text_field :first_name,placeholder: "名", autofocus: true, autocomplete: "first_name",class: "border border-dark text-center m-3 text-dark", :size => "27" %>
         </div>
 
         <div class="field">
-          <%= f.text_field :last_name_kana,placeholder: "セイ", autofocus: true, autocomplete: "last_name_kana",class: "border border-dark text-center m-3", :size => "27" %>
-          <%= f.text_field :first_name_kana,placeholder: "メイ", autofocus: true, autocomplete: "first_name_kana",class: "border border-dark text-center m-3", :size => "27" %>
+          <%= f.text_field :last_name_kana,placeholder: "セイ", autofocus: true, autocomplete: "last_name_kana",class: "border border-dark text-center m-3 text-dark", :size => "27" %>
+          <%= f.text_field :first_name_kana,placeholder: "メイ", autofocus: true, autocomplete: "first_name_kana",class: "border border-dark text-center m-3 text-dark", :size => "27" %>
         </div>
 
         <div class="field">
-          <%= f.text_field :user_name,placeholder: "ユーザー名", autofocus: true, autocomplete: "user_name",class: "border border-dark text-center m-3", :size => "60" %>
+          <%= f.text_field :user_name,placeholder: "ユーザー名", autofocus: true, autocomplete: "user_name",class: "border border-dark text-center m-3 text-dark", :size => "60" %>
         </div>
 
         <div class="field">
-          <%= f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email",class: "border border-dark text-center m-3", :size => "60" %>
+          <%= f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email",class: "border border-dark text-center m-3 text-dark", :size => "60" %>
         </div>
 
         <div class="field">
-          <%= f.password_field :password,placeholder: "パスワード", autocomplete: "new-password",class: "border border-dark text-center m-3", :size => "60" %>
+          <%= f.password_field :password,placeholder: "パスワード", autocomplete: "new-password",class: "border border-dark text-center m-3 text-dark", :size => "60" %>
         </div>
 
         <div class="field">
-          <%= f.password_field :password_confirmation,placeholder: "パスワード（確認）", autocomplete: "new-password",class: "border border-dark text-center m-3", :size => "60" %>
+          <%= f.password_field :password_confirmation,placeholder: "パスワード（確認）", autocomplete: "new-password",class: "border border-dark text-center m-3 text-dark", :size => "60" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "新規登録",class: "border border-link text-center m-3", :size => "60*30" %>
+          <%= f.submit "新規登録",class: "border border-link text-center m-3 text-dark", :size => "60*30" %>
         </div>
       <% end %>
 

@@ -3,27 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
  .login-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/login.jpg);
-  background-size: 100% auto;
+  background-image: image-url("login.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
   .signup-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/sign-up.jpg);
-  background-size: 100% auto;
+  background-image: image-url("sign-up.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
  .mypage-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/mypage.jpg);
-  background-size: 100% auto;
+  background-image: image-url("mypage.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
  .edit-backimage {
-  min-height: 40vh;
-  background-image: url(/assets/edit.jpg);
-  background-size: 100% auto;
+  background-image: image-url("edit.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 
