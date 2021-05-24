@@ -23,25 +23,10 @@
         <hr width="100%"></hr>
 
         <div class="content">
-
           <!--いいね機能-->
-          <% if user_signed_in? %>
-            <% if training.favorited_by?(current_user) %>
-              <span>
-                <%= link_to training_favorites_path(training), method: :delete do %>
-                  <i class="fas fa-heart fa-lg favoon"></i><%= training.favorites.count %>
-                <% end %>
-              </span>
-            <% else %>
-              <span>
-                <%= link_to training_favorites_path(training), method: :post do %>
-                  <i class="far fa-heart fa-lg favooff"></i><%= training.favorites.count%>
-                <% end %>
-              </span>
-            <% end %>
-          <% else %>
-          <% end %>
-
+          <div id="favorites_buttons_<%= training.id %>">
+             <%= render partial: 'favorites/favorite', locals: { training: training} %>
+          </div>
           <!--ブックマーク機能-->
           <% if user_signed_in? %>
             <% if training.bookmarked_by?(current_user) %>
@@ -51,8 +36,6 @@
             <% end %>
           <% else %>
           <% end %>
-
-
           <!--編集削除機能-->
           <% if training.user == current_user %>
             <span>
@@ -62,7 +45,6 @@
               <%= link_to "削除", training_path(training), method: :delete %>
             </span>
           <% end %>
-
         </div>
       </div>
     </div>

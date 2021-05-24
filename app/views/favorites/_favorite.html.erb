@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+  <% if training.favorited_by?(current_user) %>
+    <span>
+      <%= link_to training_favorites_path(training), method: :delete, remote: true do %>
+        <i class="fas fa-heart fa-lg favoon"></i><%= training.favorites.count %>
+      <% end %>
+    </span>
+  <% else %>
+    <span>
+      <%= link_to training_favorites_path(training), method: :post, remote: true do %>
+        <i class="far fa-heart fa-lg favooff"></i><%= training.favorites.count%>
+      <% end %>
+    </span>
+  <% end %>
+<% else %>
+<% end %>

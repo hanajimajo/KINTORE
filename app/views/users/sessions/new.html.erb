@@ -9,16 +9,16 @@
     <div class = "col-10 offset-1 mx-auto text-center">
       <%= form_with model: @user, url: user_session_path, local: true do |f| %>
         <div class="field">
-          <%= f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "border border-dark text-center m-3", :size => "60" %>
+          <%= f.email_field :email,placeholder: "メールアドレス", autofocus: true, autocomplete: "email", class: "border border-dark text-center m-3 text-dark", :size => "60" %>
         </div>
 
         <div class="field">
-          <%= f.password_field :password,placeholder: "パスワード", autocomplete: "current-password", class: "border border-link text-center m-3", :size => "60" %>
+          <%= f.password_field :password,placeholder: "パスワード", autocomplete: "current-password", class: "border border-link text-center m-3 text-dark", :size => "60" %>
         </div>
 
         <% if devise_mapping.rememberable? %>
           <div class="field">
-            <%= f.check_box :remember_me, class: "border border-dark m-1" %>
+            <%= f.check_box :remember_me, class: "border border-dark m-1 " %>
             <%= f.label :ログイン状態を保持する, class: "border border-0 m-1 text-white" %>
           </div>
         <% end %>
