@@ -1,3 +1,17 @@
 // Place all the styles related to the Searches controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 検索セレクト可視化
+.select {
+ display: none ;
+}
+
+
+.search-body {
+ text-align: right;
+}
+
+.py-0 {
+  padding-top: 0 !important;
+}

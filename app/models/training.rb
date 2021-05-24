@@ -15,4 +15,12 @@ class Training < ApplicationRecord
     bookmarks.where(user_id: user.id).exists?
   end
 
+  def self.looks(search, word)
+    if search == "partial_match"
+      @training = Training.where("title LIKE?","%#{word}%")
+    else
+      @trainings = Training.all
+    end
+  end
+
 end

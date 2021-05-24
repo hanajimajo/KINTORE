@@ -1,0 +1,52 @@
+<div class = "trainingindex-backimage">
+  <div class = "users-title">
+    <h2 class = "text-white">検索</h2>
+  </div>
+</div>
+
+<div class = "index-container">
+  <% @trainings.each do |training| %>
+    <div class = "index-box">
+      <div class = "post">
+
+          <!--トレーニング投稿情報-->
+        <p><%= attachment_image_tag training, :image, size:'250x200' %></p>
+        <p class = "text-center">
+          <%= attachment_image_tag @user, :profile_image, size:'33x33', fallback: "no_image.jpg", class: "rounded-circle" %>
+          <%= training.user.user_name %>
+        </p>
+        <p class = "break text-center">【<%= link_to training.title, training_path(training.id) %>】：<%= training.genre %></p>
+        <p class = "text-center"><%= training.time %>×<%= training.set %></p>
+        <p class = "break text-center" ><%= training.description %></p>
+
+        <!--ボーダー線-->
+        <hr width="100%"></hr>
+
+        <div class="content">
+          <!--いいね機能-->
+          <div id="favorites_buttons_<%= training.id %>">
+             <%= render partial: 'favorites/favorite', locals: { training: training} %>
+          </div>
+          <!--ブックマーク機能-->
+          <% if user_signed_in? %>
+            <% if training.bookmarked_by?(current_user) %>
+                <span><%= link_to "", training_bookmarks_path(training), method: :delete, class: "fas fa-bookmark fa-lg" %></span>
+              <% else %>
+                <span><%= link_to "", training_bookmarks_path(training), method: :post, class: "far fa-bookmark fa-lg" %></></span>
+            <% end %>
+          <% else %>
+          <% end %>
+          <!--編集削除機能-->
+          <% if training.user == current_user %>
+            <span>
+              <%= link_to "編集", edit_training_path(training) %>
+            </span>
+            <span>
+              <%= link_to "削除", training_path(training), method: :delete %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
