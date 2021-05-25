@@ -6,6 +6,7 @@
  justify-content: center;
 }
 
+// 新規投稿画面バッグ画像
   .trainingnew-backimage {
   background-image: image-url("trainingnew.jpg");
   background-size: cover;
@@ -13,6 +14,7 @@
 
 }
 
+// 投稿一覧バック
   .trainingindex-backimage {
   background-image: image-url("trainingindex.jpg");
   background-size: cover;
@@ -66,8 +68,8 @@
   border: 1px solid
 }
 
-.account-image {
-  border-radius: 50%;
+.id-image {
+  border-radius: 10px;
 }
 
 .break{
@@ -89,11 +91,13 @@
   justify-content: space-evenly;
 }
 
+// ページング機能
 .kaminari {
   margin: 0px;
   putting: 0px;
 }
 
+// ページング機能
 .pagination {
   justify-content: center;
   margin: 30px;

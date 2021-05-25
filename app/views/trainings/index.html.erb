@@ -1,6 +1,6 @@
 <div class = "trainingindex-backimage">
   <div class = "users-title">
-    <h2 class = "text-white">トレーニング一覧</h2>
+    <h2 class = "text-white font-weight-bold font-weight-bold">トレーニング一覧</h2>
   </div>
 </div>
 
@@ -10,7 +10,7 @@
       <div class = "post">
 
           <!--トレーニング投稿情報-->
-        <p><%= attachment_image_tag training, :image, size:'250x200' %></p>
+        <p><%= attachment_image_tag training, :image, size:'250x200',class: "id-image" %></p>
         <p class = "text-center">
           <%= attachment_image_tag @user, :profile_image, size:'33x33', fallback: "no_image.jpg", class: "rounded-circle" %>
           <%= training.user.user_name %>

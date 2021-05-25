@@ -1,7 +1,7 @@
 <main>
   <div class = "mypage-backimage">
     <div class = "users-title">
-      <h2 class = "text-white">マイページ</h2>
+      <h2 class = "text-white font-weight-bold">マイページ</h2>
     </div>
   </div>
 
@@ -9,7 +9,7 @@
     <div class = "low">
       <div class = "col-10 offset-1 text-center">
         <tr>
-            <%= attachment_image_tag @user, :profile_image, :fill, 70, 70, fallback: "no_image.jpg", class: "mx-5 my-3"%>
+            <%= attachment_image_tag @user, :profile_image, :fill, 70, 70, fallback: "no_image.jpg", class: "mx-5 my-3 rounded-circle"%>
             <%= link_to '編集する', edit_user_path, class: "btn btn-link  m-2 btn-outline-success text-white"%>
             <%= link_to '退会する', user_withdraw_path(current_user), method: :patch, "data-confirm" => "本当に退会しますか？", class: "m-2 btn btn-link btn-outline-danger text-white" %>
         </tr>
