@@ -24,8 +24,13 @@
           <td class = "text-dark"><%= @training.genre %></td>
         </tr>
         <tr>
+          <td class = 'information border bg-light'>参照URL</td>
+          <!--Rinku gem追加 URLを飛べるように表示　-->
+          <td class = "text-dark"><%= Rinku.auto_link(@training.url, :all, 'target="_blank"').html_safe %></td>
+        </tr>
+        <tr>
           <td class = 'information border bg-light'>詳細</td>
-          <!--段落表示-->
+          <!--段落表示(split("\n"),tag(:br))-->
           <td class = "text-dark text-left"><%=safe_join(@training.description.split("\n"),tag(:br))%></td>
         </tr>
       </table>

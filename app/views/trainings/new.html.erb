@@ -32,6 +32,10 @@
         <td class="text-dark">トレーニング画像</td>
         <td><%= f.attachment_field :image %></td>
       </tr>
+      <tr>
+        <td class="text-dark">参照URL</td>
+        <td><%= f.text_field :url, size: "50", class: "text-dark" %></td>
+      </tr>
     </table>
 
     <div class="row">
