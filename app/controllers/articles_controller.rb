@@ -28,11 +28,9 @@ class ArticlesController < ApplicationController
   def destroy
   end
 
-
   private
 
   def article_params
     params.require(:article).permit(:title, :article_image, :description)
   end
-
 end
