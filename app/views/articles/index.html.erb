@@ -4,6 +4,10 @@
     <h2 class = "text-white font-weight-bold">ピックアップ</h2>
   </div>
 </div>
+<% if admin_signed_in? %>
+  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-link btn-lg btn-block text-white" %>
+<% else %>
+<% end %>
 
 <div class = "article-container">
   <% @articles.each do |article| %>
@@ -15,6 +19,16 @@
         <div class = "article-content">
           <div><%= article.description %></div>
         </div>
+        <% if admin_signed_in? %>
+        <span>
+          <%= link_to "編集", edit_article_path(article) %>
+        </span>
+        <span>
+          <%= link_to "削除", article_path(article), method: :delete %>
+        </span>
+        <% else %>
+        <% end %>
+
       </div>
     </div>
   </div>
