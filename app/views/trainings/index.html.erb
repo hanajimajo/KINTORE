@@ -12,10 +12,10 @@
           <!--トレーニング投稿情報-->
         <p><%= attachment_image_tag training, :image, size:'250x200',class: "id-image" %></p>
         <p class = "text-center">
-          <%= attachment_image_tag @user, :profile_image, size:'33x33', fallback: "no_image.jpg", class: "rounded-circle" %>
+          <%= attachment_image_tag training.user, :profile_image, size:'33x33', fallback: "no_image.jpg", class: "rounded-circle" %>
           <%= training.user.user_name %>
         </p>
-        <p class = "break text-center">【<%= link_to training.title, training_path(training.id) %>】：<%= training.genre %></p>
+        <p class = "break text-center">【<%= link_to training.title, training_path(training.id) %>】</p>
         <p class = "text-center"><%= training.time %>×<%= training.set %></p>
         <p class = "break text-center" ><%= training.description %></p>
 

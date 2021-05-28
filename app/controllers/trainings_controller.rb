@@ -13,7 +13,6 @@ class TrainingsController < ApplicationController
 
   def index
     @trainings = Training.all
-    @user = current_user
     @trainings = Training.page(params[:page]).reverse_order
   end
 
