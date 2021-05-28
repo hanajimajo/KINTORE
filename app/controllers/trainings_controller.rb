@@ -1,4 +1,5 @@
 class TrainingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def new
     @training = Training.new

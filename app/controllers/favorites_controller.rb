@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-
+  
 
   # いいね非同期
   def create

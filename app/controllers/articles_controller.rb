@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_admin!, only: [:new, :edit]
 
   def index
     @articles = Article.all
