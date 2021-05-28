@@ -21,7 +21,7 @@
           <tbody>
             <% @bookmarks.each do |bookmark| %>
               <tr>
-                <td><%= attachment_image_tag @user, :profile_image, size: '30x30', fallback: "no_image.jpg"%></td>
+                <td><%= attachment_image_tag bookmark.training.user, :profile_image, size: '30x30', fallback: "no_image.jpg", class: "rounded-circle"%></td>
                 <td class = "text-white"><%= bookmark.training.user.user_name %></td>
                 <td>
                   <%= link_to training_path(bookmark.training) do %>
