@@ -31,6 +31,10 @@
   min-height: 100vh;
 }
 
+.logo-image {
+ background-image: image-url("logo.png");
+}
+
 li {
   list-style: none;
   padding-bottom: 10px;
@@ -42,6 +46,7 @@ li {
   top: 0px;
   background-color: #1A1A1A;
 }
+
 
  header {
   background-color: #000000;
