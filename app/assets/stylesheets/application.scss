@@ -22,34 +22,35 @@
   color: #6c6b6b;
 }
 
-.main {
- color: white;
+main {
+  width: 100%; /* 横幅800px */
+  display: flex; /* Flexboxの利用 */
+  margin: 0px; /* 要素の中央揃え */
+  padding: 0px; /* 上下に70px、左右に0pxの内側余白 */
 }
 
-.sideback {
+.sidebar {
+  width: 230px;
   padding-top: 60px;
+  background-color: #1A1A1A;
+  list-style: none;
   min-height: 100vh;
 }
 
-.logo-image {
- background-image: image-url("logo.png");
-}
 
-li {
-  list-style: none;
-  padding-bottom: 10px;
-  adding-top: 10px;
-}
-
-.sidebar_fixed {
-  position: sticky;
-  top: 0px;
-  background-color: #1A1A1A;
-}
+// .sidebar_fixed {
+//   position: sticky;
+//   top: 0px;
+//   background-color: #1A1A1A;
+// }
 
 
  header {
   background-color: #000000;
+}
+
+.title {
+  margin-right: auto;
 }
 
 
