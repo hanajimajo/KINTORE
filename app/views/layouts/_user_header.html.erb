@@ -1,10 +1,7 @@
 <header>
   <div class="navbar">
-
-
-
     <!--サイト名-->
-    <div class="title" href="/"><h3 class=" text-white">KINTORE</h3></div>
+    <a class="title" href="/"><h3 class="text-white">KINTORE</h3></a>
 
     <!--検索欄（768px以上で表示）-->
     <!--<li class = "navbar ml-auto">-->
@@ -15,11 +12,23 @@
         <ul>
           <li></li>
           <li><a><%= render'/search' %></a></li>
-          <li><a href="#">MENU1</a></li>
-          <li><a href="#">MENU2</a></li>
-          <li><a href="#">MENU3</a></li>
-          <li><a href="#">MENU4</a></li>
-          <li><a href="#">MENU5</a></li>
+            <% if user_signed_in? %>
+                    <li><%= link_to 'ホーム', root_path, class: "text-white" %></li>
+                    <li><%= link_to 'マイページ', user_path(current_user), class: "text-white" %></li>
+                    <li><%= link_to '新規投稿', new_training_path, class: "text-white" %></li>
+                    <li><%= link_to 'お気に入り', training_bookmark_path(current_user), class: "btn btn-link btn-lg btn-block text-white" %></li>
+                    <li><%= link_to 'ランキング', training_ranking_path(current_user), class: "btn btn-link btn-lg btn-block text-white" %></li>
+                    <li><%= link_to '投稿一覧', trainings_path, class: "btn btn-link btn-lg btn-block text-white" %></li>
+                    <li><%= link_to '特集', articles_path, class: "tbtn btn-link btn-lg btn-block text-white" %></li>
+                    <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-link btn-lg btn-block text-white" %></li>
+                <% else %>
+                    <li><%= link_to 'ホーム', root_path, class: "text-white" %></li>
+                    <li><%= link_to '新規登録', new_user_registration_path, class: "text-white" %></li>
+                    <li><%= link_to '投稿一覧', trainings_path, class: "text-white" %></li>
+                    <%#= link_to 'ランキング', training_ranking_path, class: "btn btn-link btn-lg btn-block text-white" %>
+                    <li><%= link_to '特集', articles_path, class: "text-white" %></li>
+                    <li><%= link_to 'ログイン', new_user_session_path, class: "text-white" %></li>
+            <% end %>
         </ul>
       </div>
 

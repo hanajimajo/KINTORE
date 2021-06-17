@@ -12,6 +12,10 @@
  text-align: right;
 }
 
+.border-radius {
+ border-radius: 5px;
+}
+
 .py-0 {
-  padding-top: 0 !important;
+  border-radius: 6px !important; //丸み調整
 }

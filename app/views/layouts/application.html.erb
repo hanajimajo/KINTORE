@@ -10,48 +10,18 @@
 
     <!-- FontAwesomeの読み込み -->
     <script src="https://kit.fontawesome.com/ca1289ead1.js" crossorigin="anonymous"></script>
-
     <!--ハンバーガーメニュー-->
     <link rel="stylesheet" href="css/style.css" />
-
     <!--各デバイスで表示される領域-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    
     <!--レスポンシブ対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
   </head>
 
   <body>
-
-    <!--<div class="container-fluid">-->
-    <!--  <header>-->
-    <!--    <div class="row">-->
-    <!--      <div class="col-12 px-0">-->
-            <%= render'layouts/user_header' %>
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--</header>-->
-
-        <!--<div class="row">-->
-        <!--    <div class="col-2 px-0">-->
-        <!--    <%#= render'layouts/user_sidebar' %>-->
-        <!--  </div>-->
-
-          <!--<div class="col-10 px-0 background_main">-->
-          <main>
-            <%#= render'layouts/user_sidebar' %>
-            <%= yield %>
-          </main>
-        <!--  </div>-->
-        <!--</div>-->
-
-        <!--<div class="row">-->
-        <!--  <div class="col-12 px-0">-->
-            <%#= render'layouts/footer' %>
-    <!--      </div>-->
-    <!--    </div>-->
-    <!--</div>-->
+    <%= render'layouts/user_header' %>
+    <%= yield %>
+    <%= render'layouts/footer' %>
   </body>
 
 </html>
