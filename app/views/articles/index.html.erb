@@ -1,39 +1,33 @@
-
-<div class = "articleindex-backimage">
-  <div class = "articles-title">
-    <h2 class = "text-white font-weight-bold">ピックアップ</h2>
-  </div>
-</div>
-<% if admin_signed_in? %>
-  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-link btn-lg btn-block text-white" %>
-<% else %>
-<% end %>
-
-<div class = "article-container">
-  <% @articles.each do |article| %>
-  <div class = "col-8 offset-md-2">
-    <div class = "article-box">
-      <h3 class = "article-background text-white text-center"><%= article.title %></h3>
-      <div class = "post">
-        <div><%= attachment_image_tag article, :article_image, class: "article-image"%></div>
-        <div class = "article-content">
-          <div><%= article.description %></div>
-        </div>
-        <% if admin_signed_in? %>
-        <span>
-          <%= link_to "編集", edit_article_path(article) %>
-        </span>
-        <span>
-          <%= link_to "削除", article_path(article), method: :delete %>
-        </span>
-        <% else %>
-        <% end %>
-
-      </div>
+<main>
+  <div class = "article">
+    <div class = "article-backimage">
+      <div class = "article-main-title">ピックアップ</div>
     </div>
   </div>
-  <% end %>
-</div>
 
-<!--ページング機能-->
-<%= paginate @articles, class: "center-block" %>
+  <!--adominログアウト-->
+  <% if admin_signed_in? %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-link btn-lg btn-block text-white" %>
+  <% else %>
+  <% end %>
+
+  <div class = "article-container">
+    <% @articles.each do |article| %>
+      <div class = "article-box">
+        <h3 class = "article-title"><%= article.title %></h3>
+        <p class = "article-image"><%= attachment_image_tag article, :article_image, class: "article-image"%></p>
+        <p class = "article-description"><%= article.description %></p>
+          <!--adominのみ編集・削除可能-->
+          <% if admin_signed_in? %>
+            <span><%= link_to "編集", edit_article_path(article) %></span>
+            <span><%= link_to "削除", article_path(article), method: :delete %></span>
+          <% else %>
+          <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <!--ページング機能-->
+  <%= paginate @articles, class: "center-block" %>
+
+</main>

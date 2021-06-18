@@ -1,31 +1,53 @@
-<div class = "articleindex-backimage">
-  <div class = "articles-title">
-    <h2 class = "text-white font-weight-bold">記事編集（管理者）</h2>
+<main>
+  <div class = "article">
+    <div class = "article-main-title">記事編集（管理者画面）</div>
   </div>
-</div>
 
-<div class = "container">
-    <div class = "low">
-      <div class = "col-10 offset-1 mx-auto text-center text-white">
-        <%= form_with model:@article, local:true do |f| %>
-
-        <%= attachment_image_tag @article, :article_image, class: "article-image" %>
-        <%= f.attachment_field :article_image, placeholder: "投稿画像", class: "text-white m-3" %>
-
-        <table class = 'table inin'>
+  <div class = "article-edit-container">
+    <div class = "edit-box">
+      <%= form_with model:@article, local:true do |f| %>
+        <%= attachment_image_tag @article, :article_image, class: "article-edit-image" %>
+        <%= f.attachment_field :article_image, placeholder: "投稿画像", class: "attachment_field" %>
+        <table class = edit-format>
           <tr>
-            <td class="text-white font-weight-bold">タイトル</td>
-            <td>
-              <%= f.text_field :title, class: "border border-dark rounded text-dark", :size => "50" %>
-            </td>
+            <td>タイトル</td>
+            <td><%= f.text_field :title %></td>
           </tr>
           <tr>
-            <td class="text-white">説明</td>
-            <td><%= f.text_area :description, size: "50x5",class: "border border-dark rounded text-dark" %>
+            <td>説明</td>
+            <td><%= f.text_area :description %></td>
           </tr>
         </table>
-        <%= f.submit '編集内容を保存', class: 'btn btn-success' %>
-        <% end %>
-      </div>
+        <%= f.submit "編集内容を保存" %>
+      <% end %>
     </div>
   </div>
+
+</main>
+
+<!--  <div class = "container">-->
+<!--    <div class = "low">-->
+<!--      <div class = "col-10 offset-1 mx-auto text-center text-white">-->
+<!--        <%= form_with model:@article, local:true do |f| %>-->
+
+<!--        <%= attachment_image_tag @article, :article_image, class: "article-image" %>-->
+<!--        <%= f.attachment_field :article_image, placeholder: "投稿画像", class: "text-white m-3" %>-->
+
+<!--        <table class = 'table inin'>-->
+<!--          <tr>-->
+<!--            <td class="text-white font-weight-bold">タイトル</td>-->
+<!--            <td>-->
+<!--              <%= f.text_field :title, class: "border border-dark rounded text-dark", :size => "50" %>-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--          <tr>-->
+<!--            <td class="text-white">説明</td>-->
+<!--            <td><%= f.text_area :description, size: "50x5",class: "border border-dark rounded text-dark" %>-->
+<!--          </tr>-->
+<!--        </table>-->
+<!--        <%= f.submit '編集内容を保存', class: 'btn btn-success' %>-->
+<!--        <% end %>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</main>-->
