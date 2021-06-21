@@ -35,13 +35,6 @@ main {
 }
 
 
-// .sidebar_fixed {
-//   position: sticky;
-//   top: 0px;
-//   background-color: #1A1A1A;
-// }
-
-
  header {
   background-color: #000000;
 }
@@ -61,4 +54,20 @@ main {
 
 .vertical-middle {
   vertical-align : middle; /* 上下中央に寄せる */
+}
+
+@media(max-width: 768px) {
+
+ header {
+  width : 100%;
+ }
+
+}
+
+@media(max-width: 425px) {
+
+ header {
+  width : 100%;
+ }
+
 }
