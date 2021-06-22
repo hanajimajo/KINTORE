@@ -55,6 +55,15 @@
 
 
 // edit
+
+.edit-area { //入力フォーム
+    background: #FFFFFF;
+    padding: 90px;
+    margin: auto;
+    width: 1000px;
+    height: 100%;
+}
+
 .article-edit-image { //記事画像
   background-size: cover;
   background-position: center;
@@ -63,12 +72,9 @@
   margin: 0;
 }
 
-.edit-area { //入力フォーム
-    background: #FFFFFF;
-    padding: 90px;
-    margin: auto;
-    width: 1000px;
-}
+.created-time {
+    font-size: 18px;
+  }
 
 .article-table {
     width: 100%;
@@ -87,14 +93,6 @@
     text-align: left;
 }
 
-.table-list-address {
-    flex-wrap: wrap;
-}
-
-.table-list-address .input-area {
-    margin-bottom: 10px;
-}
-
 .input-area {
     letter-spacing: 0.05em;
     padding: 0 10px;
@@ -103,17 +101,12 @@
     height: 40px;
     box-sizing: border-box;
     border: 1px solid #c4c4c4;
+    margin-bottom: 10px
 }
 
 .table-list td {
     font-size: 15px;
     width: calc(100% - 250px);
-}
-
-input::placeholder {
-    color: #bfbfbf;
-    font-size: 12px;
-    font-weight: bold;
 }
 
 textarea {
@@ -124,29 +117,6 @@ textarea {
     border: 1px solid #c4c4c4;
 }
 
-textarea::placeholder {
-    color: #bfbfbf;
-    font-size: 12px;
-}
-
-.contact-area .text {
-    font-size: 13px;
-    text-align: center;
-    margin-bottom: 100px;
-}
-
-.contact-area .text a {
-    color: #000;
-    border-bottom: 1px solid #000;
-    transition: all .3s;
-}
-
-.contact-area .text a:hover {
-    border-bottom: 1px solid #777;
-    padding-bottom: 5px;
-    color: #777;
-}
-
 .change-button { //画像変更ボタン
   display: block;
   margin: auto;
@@ -155,27 +125,7 @@ textarea::placeholder {
 }
 
 .submit-button { //更新ボタン
-    box-sizing: border-box;
-    position: relative;
-    display: block;
-    margin: 30px auto 0;
-    background-color: #e4eeef;
-    cursor: pointer;
-    border: 1px solid #e4eeef;
-    color: #000;
-    text-align: center;
-    text-decoration: none;
-    line-height: 1.5;
-    outline: none;
-    -webkit-transition: all .3s;
-    transition: all .5s;
-    padding: 20px 100px;
-}
-
-.submit-button:hover {
-    background: #cae1e3;
-    color: #000;
-    border: 1px solid #cae1e3;
+    ;
 }
 
 
@@ -231,10 +181,6 @@ textarea::placeholder {
         padding: 50px 20px;
     }
 
-    .check-box label {
-        width: 100%;
-    }
-
     .input-area {
         width: 100%;
         height: 30px;
@@ -269,6 +215,10 @@ textarea::placeholder {
     }
 
     .contact-area .text {
+        font-size: 13px;
+    }
+
+    .created-time {
         font-size: 13px;
     }
 }
