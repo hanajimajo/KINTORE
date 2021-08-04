@@ -14,32 +14,298 @@
   background-position: center;
 }
 
- .mypage-backimage {
-  background-image: image-url("mypage.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
  .edit-backimage {
   background-image: image-url("edit.jpg");
   background-size: cover;
   background-position: center;
 }
 
+//show
+    .user  {
+      width: 100%;
+      height: 200px;
+    }
+
+    .mypage-backimage {
+      background-image: image-url("mypage.jpg");
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      position : absolute;
+}
+
+    .user-main-title {
+      text-align: center;
+      padding: 80px;
+      color: #FFFFFF;
+      font-size : 40px;
+      font-weight: bold;
+    }
+
+    .user-container {
+      display: flex;
+      flex-direction: column; //BOXを縦並びに配置
+      align-items: center; //BOXを中央に配置
+    }
+
+    .user-box {
+      margin: 30px;
+      padding: 10px;
+      width: 40%;
+      height: 100%;
+    }
+
+    .profile-image {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 0px auto 30px;
+    }
+
+    .user-table {
+      width: 100%;
+      margin: 10px auto 10px;
+    }
+
+    .user-table-list {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .user-table-list th {
+      font-size: 20px;
+      color: #000000;
+      width: 50%;
+      padding: 10px;
+      background-color: #FFFFFF;
+      border: 1px solid #FFFFFF;
+    }
+
+    .user-table-list td {
+      font-size: 20px;
+      padding: 10px;
+      border: 1px solid;
+    }
+
+    .btn-area {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+@media(max-width: 1200px) {
+
+}
+
+@media(max-width: 1024px) {
+}
+
+
+@media(max-width: 834px) {
+  .user-box {
+    width: 70%;
+  }
+}
+
+
+@media(max-width: 425px) {
+
+  .user-main-title {
+    font-size : 20px;
+    font-weight: bold;
+  }
+
+  .user-box {
+    width: 90%;
+  }
+
+  .user-table-list th {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+  .user-table-list td {
+    font-size: 14px;
+    padding: 5px;
+  }
+
+}
+
+
+//show
+
+// .show-area {
+//  background: #FFFFFF;
+//  padding: 90px;
+//  margin: 100px auto 0px; //上-左右-下
+//  width: 600px;
+//  height: 100%;
+// }
+
+// .input-area {
+//     letter-spacing: 0.05em;
+//     padding: 0 10px;
+//     border: none;
+//     width: 550px;
+//     height: 40px;
+//     box-sizing: border-box;
+//     border: 1px solid #c4c4c4;
+//     margin-bottom: 10px
+// }
+
+// .table-list td {
+//     font-size: 15px;
+//     // width: calc(100% - 250px);
+// }
+
+// textarea {
+//     border: none;
+//     width: 550px;
+//     height: 200px;
+//     padding: 0;
+//     border: 1px solid #c4c4c4;
+// }
+
+// .change-button { //画像変更ボタン
+//   display: block;
+//   margin: auto;
+//   color: #000000;
+//   padding: 30px;
+// }
+
+// .submit-button { //更新ボタン
+//     ;
+// }
+
+
+@media(max-width:1200px) {
+    .show-area {
+        width: 80%;
+        padding: 60px;
+    }
+}
+
+@media(max-width:1024px) {
+    .show-area {
+        padding: 50px 15px;
+    }
+
+    .table-list th {
+        width: 180px;
+    }
+
+    .table-list td {
+        width: 100%;
+    }
+
+    .input-area {
+        width: 500px;
+        height: 40px;
+    }
+
+    textarea {
+        width: 500px;
+        height: 200px;
+    }
+
+    .contact-message {
+        margin-bottom: 30px;
+    }
+
+    .show-area .text {
+        margin-bottom: 30px;
+    }
+}
+
+
+@media(max-width:834px) {
+
+    .show-area {
+        margin: auto;
+        padding: 50px 20px;
+    }
+
+    .input-area {
+        width: 100%;
+        height: 30px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 200px;
+    }
+
+    .table-list {
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .table-list th {
+        font-size: 12px;
+        width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .table-list td {
+        font-size: 12px;
+    }
+
+    .table-list td {
+        width: 100%;
+    }
+
+    .contact-message {
+        font-size: 13px;
+    }
+
+    .contact-area .text {
+        font-size: 13px;
+    }
+
+    .created-time {
+        font-size: 13px;
+    }
+}
+
+
+
+@media(max-width: 425px) {
+
+  //edit
+  .input-area {
+      width: 100%;
+  }
+
+  .change-button { //画像変更ボタン
+    padding: 20px;
+    font-size: 10px;
+  }
+
+  .submit-button { //更新ボタン
+    padding: 10px;
+  }
+
+  .article-main-title {
+    font-size : 25px; //文字を小さく
+  }
+
+}
 
 .users-title {
- color: #000000;
- display: flex;
- height: 40vh;
- align-items: center;
- justify-content: center;
+  color: #000000;
+  display: flex;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
- background-size: 100% auto;
- margin: 60px auto;
+  background-size: 100% auto;
+  margin: 60px auto;
 }
 
 .textcolor {
- color: #000000;
+  color: #000000;
 }

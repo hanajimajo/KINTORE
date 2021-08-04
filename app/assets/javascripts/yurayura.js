@@ -4,10 +4,10 @@ $(function () {
 
 function rect() {
     $('#rect').animate({
-        marginBottom: '-=30px'
-    }, 4000).animate({
-        marginTop: '+=30px'
-    }, 4000);
+        marginBottom: '-=10px'
+    }, 2000).animate({
+        marginTop: '+=10px'
+    }, 2000);
     setTimeout('rect()', 2000); //アニメーションを繰り返す間隔
 
 }

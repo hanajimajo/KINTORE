@@ -1,13 +1,13 @@
-<sidebar>
-    <div class ="sidebar_fixed">
-        <nav class="sideback navbar-dark text-center h-100">
+<div class = "sidebar">
+    <!--<div class ="sidebar_fixed">-->
+        <nav class="navbar-dark text-center h-100">
                 <% if user_signed_in? %>
                     <li><%= link_to 'ホーム', root_path, class: "btn btn-link btn-lg btn-block btn-outline-link border-0 text-white" %></li>
                     <li><%= link_to 'マイページ', user_path(current_user), class: "btn btn-link btn-lg btn-block text-white" %></li>
                     <li><%= link_to '新規投稿', new_training_path, class: "btn btn-link btn-lg btn-block text-white" %></li>
                     <li><%= link_to 'お気に入り', training_bookmark_path(current_user), class: "btn btn-link btn-lg btn-block text-white" %></li>
                     <li><%= link_to 'ランキング', training_ranking_path(current_user), class: "btn btn-link btn-lg btn-block text-white" %></li>
-                    <li class = "point"><%= link_to '投稿一覧', trainings_path, class: "btn btn-link btn-lg btn-block text-white" %></li>
+                    <li><%= link_to '投稿一覧', trainings_path, class: "btn btn-link btn-lg btn-block text-white" %></li>
                     <li><%= link_to '特集', articles_path, class: "tbtn btn-link btn-lg btn-block text-white" %></li>
                     <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "btn btn-link btn-lg btn-block text-white" %></li>
                 <% else %>
@@ -18,6 +18,6 @@
                     <li><%= link_to '特集', articles_path, class: "btn btn-link btn-lg btn-block text-white" %></li>
                     <li><%= link_to 'ログイン', new_user_session_path, class: "btn btn-link btn-lg btn-block text-white" %></li>
                 <% end %>
-        </div>
-    </nav>
-</sidebar>
+        </nav>
+    <!--</div>-->
+</div>
